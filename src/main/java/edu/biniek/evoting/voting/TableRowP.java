@@ -1,22 +1,22 @@
 package edu.biniek.evoting.voting;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.Collection;
+import java.util.LinkedList;
 
 public class TableRowP {
     private final int id;
-    private final LinkedHashMap<String, String> confirmationCodes;
+    private final LinkedList<String> confirmationCodes;
 
-    public TableRowP(int id, LinkedHashMap<String, String> confirmationCodes) {
+    public TableRowP(int id, Collection<String> confirmationCodes) {
         this.id = id;
-        this.confirmationCodes = confirmationCodes;
+        this.confirmationCodes = new LinkedList<>(confirmationCodes);
     }
 
     public int getID() {
         return id;
     }
 
-    public Map<String, String> getConfirmationCodes() {
+    public LinkedList<String> getConfirmationCodes() {
         return confirmationCodes;
     }
 
@@ -24,7 +24,7 @@ public class TableRowP {
     public String toString() {
         StringBuilder builder = new StringBuilder();
         builder.append(String.format("%03d", id));
-        for (String code : confirmationCodes.values())
+        for (String code : confirmationCodes)
             builder.append(" |\t").append(code);
         return builder.toString();
     }

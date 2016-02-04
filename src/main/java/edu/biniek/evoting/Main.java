@@ -1,9 +1,6 @@
 package edu.biniek.evoting;
 
-import edu.biniek.evoting.voting.BallotFactory;
-import edu.biniek.evoting.voting.TableRowP;
-import edu.biniek.evoting.voting.Voter;
-import edu.biniek.evoting.voting.Voting;
+import edu.biniek.evoting.voting.*;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -21,12 +18,37 @@ public class Main {
         printVotesByVoters(voters);
         printVotesBySystem(voting);
         printTableP(voting);
+        printTableQ(voting);
+        printTableR(voting);
+        printTableS(voting);
     }
 
     private static void printTableP(Voting voting) {
         System.out.println();
         System.out.println("Table P:");
         for (TableRowP row : voting.getTableP())
+            System.out.println(row);
+    }
+
+    private static void printTableQ(Voting voting) {
+        System.out.println();
+        System.out.println("Table Q:");
+        for (TableRowQ row : voting.getTableQ())
+            System.out.println(row);
+    }
+
+    private static void printTableR(Voting voting) {
+        System.out.println();
+        System.out.println("Table R:");
+        for (TableRowR row : voting.getTableR())
+            System.out.println(row);
+
+    }
+
+    private static void printTableS(Voting voting) {
+        System.out.println();
+        System.out.println("Table S:");
+        for (TableRowS row : voting.getTableS())
             System.out.println(row);
     }
 

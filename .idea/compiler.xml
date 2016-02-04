@@ -26,6 +26,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="eVoting" target="1.8" />
       <module name="EVoting" target="1.8" />
     </bytecodeTargetLevel>
   </component>
