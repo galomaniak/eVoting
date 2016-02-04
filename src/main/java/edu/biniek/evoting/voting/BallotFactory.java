@@ -14,7 +14,7 @@ public class BallotFactory {
     }
 
     public Ballot getBallot() {
-        Map<String, String> ballotLines = new HashMap<>();
+        LinkedHashMap<String, String> ballotLines = new LinkedHashMap<>();
         for (String candidate : candidates)
             ballotLines.put(candidate, randomString(RANDOM_CODE_LENGTH));
         return new Ballot(ballotLines, nextSerial++);

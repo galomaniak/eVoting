@@ -2,14 +2,14 @@ package edu.biniek.evoting.voting;
 
 import edu.biniek.evoting.IncorrectVoteException;
 
-import java.util.Map;
+import java.util.LinkedHashMap;
 
 public class Ballot {
-    private final Map<String, String> confirmationCodes;
+    private final LinkedHashMap<String, String> confirmationCodes;
     private String chosenName;
     private final int serial;
 
-    public Ballot(Map<String, String> confirmationCodes, int serial) {
+    public Ballot(LinkedHashMap<String, String> confirmationCodes, int serial) {
         this.confirmationCodes = confirmationCodes;
         this.serial = serial;
     }
@@ -31,5 +31,9 @@ public class Ballot {
 
     public int getSerial() {
         return serial;
+    }
+
+    public LinkedHashMap<String, String> getConfirmationCodes() {
+        return confirmationCodes;
     }
 }

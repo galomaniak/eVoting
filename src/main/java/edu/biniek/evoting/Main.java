@@ -1,7 +1,7 @@
 package edu.biniek.evoting;
 
 import edu.biniek.evoting.voting.BallotFactory;
-import edu.biniek.evoting.voting.BulletinBoardRowQ;
+import edu.biniek.evoting.voting.TableRowP;
 import edu.biniek.evoting.voting.Voter;
 import edu.biniek.evoting.voting.Voting;
 
@@ -20,13 +20,13 @@ public class Main {
         Voting voting = createVoting(voters);
         printVotesByVoters(voters);
         printVotesBySystem(voting);
-        printBulletinBoardQ(voting);
+        printTableP(voting);
     }
 
-    private static void printBulletinBoardQ(Voting voting) {
+    private static void printTableP(Voting voting) {
         System.out.println();
-        System.out.println("Bulletin board (Q):");
-        for (BulletinBoardRowQ row : voting.generateBulletinBoard())
+        System.out.println("Table P:");
+        for (TableRowP row : voting.getTableP())
             System.out.println(row);
     }
 
@@ -46,7 +46,7 @@ public class Main {
 
     private static Voting createVoting(List<Voter> voters) {
         BallotFactory ballotFactory = new BallotFactory(CANDIDATES);
-        Voting voting = new Voting(ballotFactory.getBallots(VOTERS_NUMBER + 10));
+        Voting voting = new Voting(ballotFactory.getBallots(VOTERS_NUMBER));
         for (Voter voter : voters)
             voter.vote(voting);
         return voting;

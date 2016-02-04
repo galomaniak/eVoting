@@ -12,10 +12,12 @@ public class Voting {
     private Queue<Ballot> ballotsReserve;
     @VisibleForTesting
     List<Ballot> ballotsInBox;
+    List<TableRowP> tableP;
 
     public Voting(List<Ballot> ballots) {
         this.ballotsReserve = new LinkedList<>(ballots);
         ballotsInBox = new LinkedList<>();
+        tableP = generateTableP();
     }
 
     public VotingConfirmation vote(Consumer<Ballot> consumer) {
@@ -33,10 +35,14 @@ public class Voting {
         return ctr;
     }
 
-    public List<BulletinBoardRowQ> generateBulletinBoard() {
-        List<BulletinBoardRowQ> rows = new LinkedList<>();
-        for (Ballot ballot : ballotsInBox)
-            rows.add(new BulletinBoardRowQ(ballot.getSerial(), ballot.getConfirmationCode()));
+    public List<TableRowP> getTableP() {
+        return tableP;
+    }
+
+    private List<TableRowP> generateTableP() {
+        List<TableRowP> rows = new LinkedList<>();
+        for (Ballot ballot : ballotsReserve)
+            rows.add(new TableRowP(ballot.getSerial(), ballot.getConfirmationCodes()));
         return rows;
     }
 }
