@@ -143,10 +143,10 @@ public class Institution {
     private void clearTableRowR(TableRowR tableRowR, Random random) {
         boolean hideLeft = random.nextBoolean();
         if (hideLeft) {
-            tableRowR.setRowQ(-1);
-            tableRowR.setColumnQ(-1);
+            tableRowR.setRowQ(null);
+            tableRowR.setColumnQ(null);
         } else {
-            tableRowR.setRowS(-1);
+            tableRowR.setRowS(null);
         }
     }
 

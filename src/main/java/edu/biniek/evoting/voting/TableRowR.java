@@ -2,11 +2,11 @@ package edu.biniek.evoting.voting;
 
 public class TableRowR {
     private boolean flag;
-    private int rowQ;
-    private int columnQ;
-    private int rowS;
+    private Integer rowQ;
+    private Integer columnQ;
+    private Integer rowS;
 
-    public TableRowR(int rowQ, int columnQ, int rowS) {
+    public TableRowR(Integer rowQ, Integer columnQ, Integer rowS) {
         this.flag = false;
         this.rowQ = rowQ;
         this.columnQ = columnQ;
@@ -21,32 +21,43 @@ public class TableRowR {
         this.flag = flag;
     }
 
-    public int getRowQ() {
+    public Integer getRowQ() {
         return rowQ;
     }
 
-    public void setRowQ(int rowQ) {
+    public void setRowQ(Integer rowQ) {
         this.rowQ = rowQ;
     }
 
-    public int getColumnQ() {
+    public Integer getColumnQ() {
         return columnQ;
     }
 
-    public void setColumnQ(int columnQ) {
+    public void setColumnQ(Integer columnQ) {
         this.columnQ = columnQ;
     }
 
-    public int getRowS() {
+    public Integer getRowS() {
         return rowS;
     }
 
-    public void setRowS(int rowS) {
+    public void setRowS(Integer rowS) {
         this.rowS = rowS;
     }
 
     @Override
     public String toString() {
-        return (flag?"1":"0") + " | (" + String.format("%03d", rowQ) + ", " + columnQ + ") | " + rowS;
+        StringBuffer buffer = new StringBuffer();
+        buffer.append(flag?"1":"0").append(" | ");
+        if (rowQ != null && columnQ != null)
+            buffer.append("(").append(String.format("%03d", rowQ)).append(", ").append(columnQ).append(")");
+        else
+            buffer.append("********");
+        buffer.append(" | ");
+        if (rowS != null)
+            buffer.append(rowS);
+        else
+            buffer.append("***");
+        return buffer.toString();
     }
 }

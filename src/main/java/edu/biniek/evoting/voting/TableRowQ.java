@@ -7,11 +7,6 @@ public class TableRowQ {
     private final int id;
     private LinkedList<ConfirmationCode> confirmationCodes;
 
-    public TableRowQ(int id, LinkedList<ConfirmationCode> confirmationCodes) {
-        this.id = id;
-        this.confirmationCodes = confirmationCodes;
-    }
-
     public TableRowQ(TableRowP tableRowP) {
         this.id = tableRowP.getID();
         this.confirmationCodes = tableRowP.getConfirmationCodes();
