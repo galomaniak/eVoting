@@ -17,6 +17,7 @@ public class Main {
         Voting voting = createVoting(voters);
         printVotesByVoters(voters);
         printVotesBySystem(voting);
+        voting.finish();
         printTableP(voting);
         printTableQ(voting);
         printTableR(voting);
@@ -26,21 +27,21 @@ public class Main {
     private static void printTableP(Voting voting) {
         System.out.println();
         System.out.println("Table P:");
-        for (TableRowP row : voting.getTableP())
+        for (TableRowP row : voting.getInstitution().getTableP())
             System.out.println(row);
     }
 
     private static void printTableQ(Voting voting) {
         System.out.println();
         System.out.println("Table Q:");
-        for (TableRowQ row : voting.getTableQ())
+        for (TableRowQ row : voting.getInstitution().getTableQ())
             System.out.println(row);
     }
 
     private static void printTableR(Voting voting) {
         System.out.println();
         System.out.println("Table R:");
-        for (TableRowR row : voting.getTableR())
+        for (TableRowR row : voting.getInstitution().getTableR())
             System.out.println(row);
 
     }
@@ -48,7 +49,7 @@ public class Main {
     private static void printTableS(Voting voting) {
         System.out.println();
         System.out.println("Table S:");
-        for (TableRowS row : voting.getTableS())
+        for (TableRowS row : voting.getInstitution().getTableS())
             System.out.println(row);
     }
 

@@ -20,8 +20,8 @@ public class BallotFactory {
         return new Ballot(ballotLines, nextSerial++);
     }
 
-    public List<Ballot> getBallots(int number) {
-        List<Ballot> ballots = new LinkedList<>();
+    public LinkedList<Ballot> getBallots(int number) {
+        LinkedList<Ballot> ballots = new LinkedList<>();
         for (int i = 0; i < number; ++i)
             ballots.add(getBallot());
         return ballots;

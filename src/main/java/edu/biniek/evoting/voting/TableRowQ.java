@@ -5,9 +5,9 @@ import java.util.List;
 
 public class TableRowQ {
     private final int id;
-    private LinkedList<String> confirmationCodes;
+    private LinkedList<ConfirmationCode> confirmationCodes;
 
-    public TableRowQ(int id, LinkedList<String> confirmationCodes) {
+    public TableRowQ(int id, LinkedList<ConfirmationCode> confirmationCodes) {
         this.id = id;
         this.confirmationCodes = confirmationCodes;
     }
@@ -21,7 +21,7 @@ public class TableRowQ {
         return id;
     }
 
-    public List<String> getConfirmationCodes() {
+    public List<ConfirmationCode> getConfirmationCodes() {
         return confirmationCodes;
     }
 
@@ -29,12 +29,12 @@ public class TableRowQ {
     public String toString() {
         StringBuilder builder = new StringBuilder();
         builder.append(String.format("%03d", id));
-        for (String code : confirmationCodes)
+        for (ConfirmationCode code : confirmationCodes)
             builder.append(" |\t").append(code);
         return builder.toString();
     }
 
-    public void setConfirmationCodes(LinkedList<String> confirmationCodes) {
+    public void setConfirmationCodes(LinkedList<ConfirmationCode> confirmationCodes) {
         this.confirmationCodes = confirmationCodes;
     }
 }
