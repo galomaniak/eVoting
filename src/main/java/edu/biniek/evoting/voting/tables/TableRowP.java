@@ -1,4 +1,6 @@
-package edu.biniek.evoting.voting;
+package edu.biniek.evoting.voting.tables;
+
+import edu.biniek.evoting.voting.ConfirmationCode;
 
 import java.util.Collection;
 import java.util.LinkedList;

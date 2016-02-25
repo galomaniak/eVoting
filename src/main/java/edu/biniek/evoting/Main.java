@@ -1,6 +1,10 @@
 package edu.biniek.evoting;
 
 import edu.biniek.evoting.voting.*;
+import edu.biniek.evoting.voting.tables.TableRowP;
+import edu.biniek.evoting.voting.tables.TableRowQ;
+import edu.biniek.evoting.voting.tables.TableRowR;
+import edu.biniek.evoting.voting.tables.TableRowS;
 
 import java.util.LinkedList;
 import java.util.List;

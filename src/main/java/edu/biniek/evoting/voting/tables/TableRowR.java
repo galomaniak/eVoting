@@ -1,4 +1,4 @@
-package edu.biniek.evoting.voting;
+package edu.biniek.evoting.voting.tables;
 
 public class TableRowR {
     private boolean flag;
